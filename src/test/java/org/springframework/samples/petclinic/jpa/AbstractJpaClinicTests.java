@@ -7,7 +7,7 @@ import java.util.Date;
 import javax.persistence.EntityManager;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import org.springframework.samples.petclinic.Clinic;
+import org.springframework.samples.petclinic.dao.Clinic;
 import org.springframework.samples.petclinic.Owner;
 import org.springframework.samples.petclinic.Pet;
 import org.springframework.samples.petclinic.PetType;

@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.jdbc;
+package org.springframework.samples.petclinic.dao.jdbc;
 
 import org.springframework.samples.petclinic.AbstractClinicTests;
 import org.springframework.test.annotation.DirtiesContext;

@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.jpa;
+package org.springframework.samples.petclinic.dao.jpa;
 
 import java.util.Collection;
 
@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.springframework.samples.petclinic.Clinic;
+import org.springframework.samples.petclinic.dao.Clinic;
 import org.springframework.samples.petclinic.Owner;
 import org.springframework.samples.petclinic.Pet;
 import org.springframework.samples.petclinic.PetType;

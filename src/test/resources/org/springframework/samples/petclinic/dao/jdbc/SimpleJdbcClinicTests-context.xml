@@ -6,6 +6,6 @@
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 		p:dataSource-ref="dataSource" />
 
-	<bean class="org.springframework.samples.petclinic.jdbc.SimpleJdbcClinic" />
+	<bean class="org.springframework.samples.petclinic.dao.jdbc.SimpleJdbcClinic" />
 
 </beans>

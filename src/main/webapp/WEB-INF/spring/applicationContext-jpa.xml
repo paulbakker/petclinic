@@ -86,6 +86,7 @@
 		EntityManager will be auto-injected due to @PersistenceContext.
 		PersistenceExceptions will be auto-translated due to @Repository.
 	-->
-	<bean id="clinic" class="org.springframework.samples.petclinic.jpa.EntityManagerClinic"/>
+	<bean id="clinic" class="org.springframework.samples.petclinic.dao.jpa.EntityManagerClinic"/>
+    <bean id="reporting" class="org.springframework.samples.petclinic.dao.jdbc.JdbcClinicReporting"/>
 
 </beans>

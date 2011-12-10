@@ -4,7 +4,7 @@ package org.springframework.samples.petclinic.web;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.samples.petclinic.Clinic;
+import org.springframework.samples.petclinic.dao.Clinic;
 import org.springframework.samples.petclinic.Pet;
 import org.springframework.samples.petclinic.PetType;
 import org.springframework.samples.petclinic.validation.PetValidator;
