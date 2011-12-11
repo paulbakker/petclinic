@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: paul
+  Date: 12/11/11
+  Time: 2:00 AM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>Simple JSF Facelets page</title>
+    <h:outputStylesheet library="styles" name="petclinic.css"/>
+</h:head>
+
+<h:body>
+    <div id="main">
+        <ui:insert name="content"/>
+
+        <table class="footer">
+            <tr>
+                <td><a href="/">Home</a>
+                </td>
+                <td align="right">
+                    <h:graphicImage library="images" name="springsource-logo.png"/>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</h:body>
+
+</html>
+

@@ -1,27 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Created by IntelliJ IDEA.
-  User: paul
-  Date: 12/10/11
-  Time: 7:54 PM
--->
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head>
-    <title>Simple JSF Facelets page</title>
-</h:head>
+    <ui:define name="content">
+        <h:dataTable value="#{vetsController.vets}" var="vet">
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                #{vet.firstName} #{vet.lastName}
+            </h:column>
 
-<h:body>
-    <h:dataTable value="#{vetsController.vets}" var="vet">
-        <h:column>
-            #{vet.firstName}
-        </h:column>
-    </h:dataTable>
-</h:body>
+            <h:column>
+                <f:facet name="header">Specialities</f:facet>
+                <ui:repeat value="#{vet.specialties}" var="speciality">
+                    #{speciality.name}
+                </ui:repeat>
+                <h:outputText rendered="#{vet.nrOfSpecialties == 0}" value="none"/>
+            </h:column>
+        </h:dataTable>
+    </ui:define>
 
-</html>
+</ui:composition>

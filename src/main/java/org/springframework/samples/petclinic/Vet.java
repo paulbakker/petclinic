@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
@@ -18,6 +19,7 @@ import org.springframework.beans.support.PropertyComparator;
  * @author Sam Brannen
  * @author Arjen Poutsma
  */
+@XmlRootElement
 public class Vet extends Person {
 
 	private Set<Specialty> specialties;
