@@ -31,16 +31,10 @@
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 			p:dataSource-ref="dataSource">
 		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.TopLinkJpaVendorAdapter"
-					p:databasePlatform="${jpa.databasePlatform}" p:showSql="${jpa.showSql}"/>
-			<!--
-			<bean class="org.springframework.orm.jpa.vendor.OpenJpaVendorAdapter"
-					p:database="${jpa.database}" p:showSql="${jpa.showSql}"/>
-			-->
-			<!--
+
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
 					p:database="${jpa.database}" p:showSql="${jpa.showSql}"/>
-			-->
+
 		</property>
 		<property name="persistenceXmlLocation" value="classpath:META-INF/jpa-persistence.xml"/>
 	</bean>

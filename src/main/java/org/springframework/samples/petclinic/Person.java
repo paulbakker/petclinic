@@ -1,5 +1,9 @@
 package org.springframework.samples.petclinic;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Pattern;
+
 /**
  * Simple JavaBean domain object representing an person.
  *
@@ -7,8 +11,10 @@ package org.springframework.samples.petclinic;
  */
 public class Person extends BaseEntity {
 
+    @NotEmpty
 	private String firstName;
 
+    @NotEmpty
 	private String lastName;
 
 	public String getFirstName() {

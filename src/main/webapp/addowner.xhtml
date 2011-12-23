@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+
+    <ui:define name="content">
+        <h:form>
+            <table>
+                <tr>
+                    <th>
+                        First Name: <h:message for="firstnameInput"/><br/>
+                        <h:inputText value="#{newOwnerController.owner.firstName}" id="firstnameInput"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Last Name: <h:message for="lastnameInput"/><br/>
+                        <h:inputText value="#{newOwnerController.owner.lastName}" id="lastnameInput"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Address: <h:message for="addressInput"/><br/>
+                        <h:inputText value="#{newOwnerController.owner.address}" id="addressInput"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        City: <h:message for="cityInput"/><br/>
+                        <h:inputText value="#{newOwnerController.owner.city}" id="cityInput"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Telephone: <h:message for="telephoneInput"/><br/>
+                        <h:inputText value="#{newOwnerController.owner.telephone}" id="telephoneInput"/>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                         <h:commandButton value="#{newOwnerController.owner.new ? 'Add' : 'Update'} Owner" action="#{newOwnerController.save}"/>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

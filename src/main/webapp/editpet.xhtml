@@ -1,0 +1,45 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+
+    <ui:define name="content">
+
+        <h:form>
+            <h2><h:outputText rendered="#{petController.pet.new}" value="New"/>Pet</h2>
+            <b>Owner:</b> ${ownerDetailsController.pet.owner.firstName} ${petController.pet.owner.lastName}
+            <table>
+                <tr>
+                    <th>
+                        Name: <h:message for="nameInput"/><br/>
+                        <h:inputText id="nameInput" value="#{ownerDetailsController.pet.name}"/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Birth Date: <h:message for="dateInput"/><br/>
+                        <h:inputText id="dateInput" value="#{ownerDetailsController.pet.birthDate}">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>
+                        </h:inputText>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Type: <h:message for="typeInput"/><br/>
+                        <h:selectOneMenu value="#{ownerDetailsController.pet.type}" id="typeInput">
+                            <f:converter converterId="petTypeConverter"/>
+                            <f:selectItems value="#{ownerDetailsController.petTypes}"/>
+                        </h:selectOneMenu>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <h:commandButton value="#{ownerDetailsController.pet.new ? 'Add' : 'Update'} Pet" action="#{ownerDetailsController.savePet}"/>
+                    </td>
+                </tr>
+            </table>
+
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -1,0 +1,97 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
+
+
+    <ui:define name="content">
+
+        <h:form>
+            <h2>Owner Information</h2>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>
+                        <h:panelGroup rendered="#{not ownerDetailsController.edit}">
+                            <b>#{ownerDetailsController.owner.firstName} #{ownerDetailsController.owner.lastName}</b>
+                        </h:panelGroup>
+                        <h:panelGroup rendered="#{ownerDetailsController.edit}">
+                            <h:inputText value="#{ownerDetailsController.owner.firstName}"/> <h:inputText value="#{ownerDetailsController.owner.lastName}"/>
+                        </h:panelGroup>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>
+                        <h:outputText value="#{ownerDetailsController.owner.address}" rendered="#{not ownerDetailsController.edit}"/>
+                        <h:inputText value="#{ownerDetailsController.owner.address}" rendered="#{ownerDetailsController.edit}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>
+                        <h:outputText value="#{ownerDetailsController.owner.city}" rendered="#{not ownerDetailsController.edit}"/>
+                        <h:inputText value="#{ownerDetailsController.owner.city}" rendered="#{ownerDetailsController.edit}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Telephone</th>
+                    <td>
+                        <h:outputText value="#{ownerDetailsController.owner.telephone}" rendered="#{not ownerDetailsController.edit}"/>
+                        <h:inputText value="#{ownerDetailsController.owner.telephone}" rendered="#{ownerDetailsController.edit}"/>
+                    </td>
+                </tr>
+            </table>
+
+            <h:commandButton value="Edit owner" action="#{ownerDetailsController.edit}" rendered="#{not ownerDetailsController.edit}"/>
+            <h:commandButton value="Save owner" action="#{ownerDetailsController.save}" rendered="#{ownerDetailsController.edit}"/>
+            <h:commandButton value="Add Pet" action="#{ownerDetailsController.newPet}"/>
+
+            <h2>Pets and Visits</h2>
+            <ui:repeat value="#{ownerDetailsController.owner.pets}" var="pet">
+                <table>
+                    <tr>
+                        <td valign="top">
+                            <table>
+                                <tr>
+                                    <th>Name</th>
+                                    <td>
+                                        #{pet.name}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Birth Date</th>
+                                    <td>#{pet.birthDate}</td>
+                                </tr>
+                                <tr>
+                                    <th>Type</th>
+                                    <td>#{pet.type}</td>
+                                </tr>
+                            </table>
+                        </td>
+
+                        <td valign="top">
+                            <h:dataTable value="#{pet.visits}" var="visit">
+                                <h:column>
+                                    <f:facet name="header">Visit Date</f:facet>
+                                    #{visit.date}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">Description</f:facet>
+                                    #{visit.description}
+                                </h:column>
+                            </h:dataTable>
+                        </td>
+                    </tr>
+                </table>
+
+                <h:commandButton value="Edit Pet" action="#{ownerDetailsController.editPet(pet)}"/>
+
+            </ui:repeat>
+            <br/><br/><br/>
+
+            <h:commandLink action="#{ownerDetailsController.toOverview}" value="Back to list"/>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

@@ -6,9 +6,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.core.style.ToStringCreator;
+
+import javax.validation.constraints.Pattern;
 
 /**
  * Simple JavaBean domain object representing an owner.
@@ -19,10 +22,13 @@ import org.springframework.core.style.ToStringCreator;
  */
 public class Owner extends Person {
 
+    @NotEmpty
 	private String address;
 
+    @NotEmpty
 	private String city;
 
+    @NotEmpty @Pattern(regexp = "^[0-9]+$", message = "Only digits are allowed")
 	private String telephone;
 
 	private Set<Pet> pets;
