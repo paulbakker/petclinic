@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.3-SNAPSHOT"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.3-SNAPSHOT http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.3-SNAPSHOT.xsd">
+    <url-mapping id="home">
+        <pattern value="/"/>
+        <view-id value="/faces/welcome.xhtml"/>
+    </url-mapping>
+
+    <url-mapping id="vets">
+        <pattern value="/vets"/>
+        <view-id value="/faces/vets.xhtml"/>
+    </url-mapping>
+
+    <url-mapping id="searchowners">
+        <pattern value="/owners"/>
+        <view-id value="/faces/findowner.xhtml"/>
+    </url-mapping>
+
+    <url-mapping id="reports">
+        <pattern value="/reports"/>
+        <view-id value="/faces/reports.xhtml"/>
+    </url-mapping>
+</pretty-config>
