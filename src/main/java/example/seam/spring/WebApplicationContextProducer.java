@@ -1,5 +1,6 @@
 package example.seam.spring;
 
+import org.jboss.seam.spring.context.Configuration;
 import org.jboss.seam.spring.context.SpringContext;
 import org.jboss.seam.spring.context.Web;
 import org.jboss.seam.spring.inject.SpringBean;
@@ -16,12 +17,14 @@ import javax.enterprise.inject.Produces;
 public class WebApplicationContextProducer {
     @Produces
     @SpringContext
-    @Web
+    @Configuration(locations = "classpath:applicationContext-jpa.xml")
     ApplicationContext context;
 
-    @Produces @SpringBean
+    @Produces
+    @SpringBean
     Clinic clinic;
 
-    @Produces @SpringBean
+    @Produces
+    @SpringBean
     ClinicReporting clinicReporting;
 }
