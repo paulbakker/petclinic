@@ -26,8 +26,7 @@
                 <tr>
                     <th>
                         Type: <h:message for="typeInput"/><br/>
-                        <h:selectOneMenu value="#{ownerDetailsController.pet.type}" id="typeInput">
-                            <f:converter converterId="petTypeConverter"/>
+                        <h:selectOneMenu value="#{ownerDetailsController.pet.type}" id="typeInput" converter="#{ownerDetailsController.petTypeConverter}">
                             <f:selectItems value="#{ownerDetailsController.petTypes}"/>
                         </h:selectOneMenu>
                     </th>

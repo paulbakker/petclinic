@@ -3,6 +3,7 @@ package example.jsf;
 import org.springframework.samples.petclinic.PetType;
 import org.springframework.samples.petclinic.dao.Clinic;
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -14,6 +15,7 @@ import javax.inject.Inject;
  * @Author Paul Bakker - paul.bakker@luminis.eu
  */
 @FacesConverter("petTypeConverter")
+@RequestScoped
 public class PetTypeConverter implements Converter {
     @Inject
     Clinic clinic;

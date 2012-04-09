@@ -131,11 +131,11 @@
       <artifactId>seam-solder</artifactId>
       <version>3.0.0.Final</version>
     </dependency>
-    <dependency>
-      <groupId>org.jboss.seam.faces</groupId>
-      <artifactId>seam-faces</artifactId>
-      <version>3.0.2.Final</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.jboss.seam.faces</groupId>-->
+      <!--<artifactId>seam-faces</artifactId>-->
+      <!--<version>3.0.2.Final</version>-->
+    <!--</dependency>-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>

@@ -31,7 +31,8 @@ public class OwnerDetailsController implements Serializable {
     @Inject
     Conversation conversation;
 
-    
+
+
     private boolean edit = false;
     private Owner owner;
     private Pet pet;
@@ -89,4 +90,9 @@ public class OwnerDetailsController implements Serializable {
         return "findowner.xhtml?faces-redirect=true";
     }
 
+    @Inject PetTypeConverter petTypeConverter;
+
+    public PetTypeConverter getPetTypeConverter() {
+        return petTypeConverter;
+    }
 }
