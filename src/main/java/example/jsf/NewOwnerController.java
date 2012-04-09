@@ -25,10 +25,13 @@ public class NewOwnerController {
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
-    
+
+    @Inject
+    OwnerDetailsController ownerDetailsController;
+
     public String save() {
         clinic.storeOwner(owner);
 
-        return "showowner.xhtml?faces-redirect=true&ownerId=" + owner.getId();
+        return ownerDetailsController.showOwner(owner);
     }
 }
