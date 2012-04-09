@@ -1,7 +1,7 @@
 package example.jsf;
 
-import org.springframework.samples.petclinic.PetType;
-import org.springframework.samples.petclinic.dao.Clinic;
+import example.dao.Clinic;
+import example.entities.PetType;
 
 import javax.enterprise.context.RequestScoped;
 import javax.faces.component.UIComponent;

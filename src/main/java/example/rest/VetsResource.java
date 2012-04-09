@@ -1,7 +1,7 @@
 package example.rest;
 
-import org.springframework.samples.petclinic.Vet;
-import org.springframework.samples.petclinic.dao.Clinic;
+import example.dao.Clinic;
+import example.entities.Vet;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;

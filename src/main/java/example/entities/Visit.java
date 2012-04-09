@@ -1,5 +1,7 @@
-package org.springframework.samples.petclinic;
+package example.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  *
  * @author Ken Krebs
  */
+@Entity
 public class Visit extends BaseEntity {
 
 	/** Holds value of property date. */
@@ -16,6 +19,7 @@ public class Visit extends BaseEntity {
 	private String description;
 
 	/** Holds value of property pet. */
+   @ManyToOne
 	private Pet pet;
 
 

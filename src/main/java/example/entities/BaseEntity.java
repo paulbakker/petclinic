@@ -1,4 +1,8 @@
-package org.springframework.samples.petclinic;
+package example.entities;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Simple JavaBean domain object with an id property.
@@ -7,8 +11,9 @@ package org.springframework.samples.petclinic;
  * @author Ken Krebs
  * @author Juergen Hoeller
  */
-public class BaseEntity {
-
+@MappedSuperclass
+public abstract class BaseEntity {
+   @Id @GeneratedValue
 	private Integer id;
 	
 

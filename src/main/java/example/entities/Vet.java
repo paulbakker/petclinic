@@ -1,15 +1,13 @@
-package org.springframework.samples.petclinic;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+package example.entities;
 
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.*;
 
 /**
  * Simple JavaBean domain object representing a veterinarian.
@@ -20,8 +18,10 @@ import org.springframework.beans.support.PropertyComparator;
  * @author Arjen Poutsma
  */
 @XmlRootElement
+@Entity
 public class Vet extends Person {
 
+   @OneToMany
 	private Set<Specialty> specialties;
 
 

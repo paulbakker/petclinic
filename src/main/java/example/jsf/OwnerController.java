@@ -1,14 +1,13 @@
 package example.jsf;
 
-import org.springframework.samples.petclinic.Owner;
-import org.springframework.samples.petclinic.dao.Clinic;
+import example.dao.Clinic;
+import example.entities.Owner;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * @Author Paul Bakker - paul.bakker@luminis.eu

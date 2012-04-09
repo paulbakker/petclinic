@@ -1,6 +1,8 @@
-package org.springframework.samples.petclinic;
+package example.entities;
 
 import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.MappedSuperclass;
 
 /**
  * Simple JavaBean domain object adds a name property to <code>BaseEntity</code>.
@@ -9,7 +11,8 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author Ken Krebs
  * @author Juergen Hoeller
  */
-public class NamedEntity extends BaseEntity {
+@MappedSuperclass
+public abstract class NamedEntity extends BaseEntity {
     @NotEmpty
 	private String name;
 

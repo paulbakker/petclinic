@@ -1,14 +1,15 @@
-package org.springframework.samples.petclinic;
+package example.entities;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.Pattern;
+import javax.persistence.Entity;
 
 /**
  * Simple JavaBean domain object representing an person.
  *
  * @author Ken Krebs
  */
+@Entity
 public class Person extends BaseEntity {
 
     @NotEmpty

@@ -1,17 +1,15 @@
-package org.springframework.samples.petclinic;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+package example.entities;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.core.style.ToStringCreator;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Pattern;
+import java.util.*;
 
 /**
  * Simple JavaBean domain object representing an owner.
@@ -20,6 +18,7 @@ import javax.validation.constraints.Pattern;
  * @author Juergen Hoeller
  * @author Sam Brannen
  */
+@Entity
 public class Owner extends Person {
 
     @NotEmpty
@@ -31,6 +30,7 @@ public class Owner extends Person {
     @NotEmpty @Pattern(regexp = "^[0-9]+$", message = "Only digits are allowed")
 	private String telephone;
 
+   @OneToMany(fetch = FetchType.EAGER)
 	private Set<Pet> pets;
 
 

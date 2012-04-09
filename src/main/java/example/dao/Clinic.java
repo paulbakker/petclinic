@@ -1,9 +1,9 @@
-package org.springframework.samples.petclinic.dao;
+package example.dao;
 
 import java.util.Collection;
 
+import example.entities.*;
 import org.springframework.dao.DataAccessException;
-import org.springframework.samples.petclinic.*;
 
 /**
  * The high-level PetClinic business interface.
@@ -57,21 +57,21 @@ public interface Clinic {
 	/**
 	 * Save an <code>Owner</code> to the data store, either inserting or updating it.
 	 * @param owner the <code>Owner</code> to save
-	 * @see org.springframework.samples.petclinic.BaseEntity#isNew
+	 * @see example.entities.BaseEntity#isNew
 	 */
 	void storeOwner(Owner owner) throws DataAccessException;
 
 	/**
 	 * Save a <code>Pet</code> to the data store, either inserting or updating it.
 	 * @param pet the <code>Pet</code> to save
-	 * @see org.springframework.samples.petclinic.BaseEntity#isNew
+	 * @see example.entities.BaseEntity#isNew
 	 */
 	void storePet(Pet pet) throws DataAccessException;
 
 	/**
 	 * Save a <code>Visit</code> to the data store, either inserting or updating it.
 	 * @param visit the <code>Visit</code> to save
-	 * @see org.springframework.samples.petclinic.BaseEntity#isNew
+	 * @see example.entities.BaseEntity#isNew
 	 */
 	void storeVisit(Visit visit) throws DataAccessException;
 

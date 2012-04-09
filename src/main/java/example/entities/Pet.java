@@ -1,14 +1,12 @@
-package org.springframework.samples.petclinic;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+package example.entities;
 
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
+
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.util.*;
 
 /**
  * Simple JavaBean business object representing a pet.
@@ -17,14 +15,18 @@ import org.springframework.beans.support.PropertyComparator;
  * @author Juergen Hoeller
  * @author Sam Brannen
  */
+@Entity
 public class Pet extends NamedEntity {
 
 	private Date birthDate;
 
+   @ManyToOne
 	private PetType type;
 
+   @ManyToOne
 	private Owner owner;
 
+   @OneToMany
 	private Set<Visit> visits;
 
 
