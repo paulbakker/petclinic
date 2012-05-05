@@ -2,9 +2,9 @@ package example.dao.jpa;
 
 import example.dao.Clinic;
 import example.entities.*;
+import example.interceptors.CountUsage;
 import org.springframework.dao.DataAccessException;
 
-import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,9 +16,7 @@ import java.util.Collection;
  *
  */
 @Stateless
-@Local(Clinic.class)
-public class EntityManagerClinic implements Clinic
-{
+public class EntityManagerClinic implements Clinic {
 
 	@PersistenceContext
 	private EntityManager em;
@@ -32,9 +30,11 @@ public class EntityManagerClinic implements Clinic
 		return this.em.createQuery("SELECT ptype FROM PetType ptype ORDER BY ptype.name", PetType.class).getResultList();
 	}
 
-	public Collection<Owner> findOwners(String lastName) {
+    @CountUsage
+    public Collection<Owner> findOwners(String lastName) {
 		TypedQuery<Owner> query = this.em.createQuery("SELECT owner FROM Owner owner WHERE owner.lastName LIKE :lastName", Owner.class);
 		query.setParameter("lastName", lastName + "%");
+        System.out.println("should be intercepted...");
 		return query.getResultList();
 	}
 

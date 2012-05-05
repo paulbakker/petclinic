@@ -1,6 +1,7 @@
 package example.jsf;
 
-import org.springframework.samples.petclinic.dao.ClinicReporting;
+
+import example.dao.ClinicReporting;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

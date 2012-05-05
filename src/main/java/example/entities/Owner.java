@@ -11,13 +11,6 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Pattern;
 import java.util.*;
 
-/**
- * Simple JavaBean domain object representing an owner.
- *
- * @author Ken Krebs
- * @author Juergen Hoeller
- * @author Sam Brannen
- */
 @Entity
 public class Owner extends Person {
 

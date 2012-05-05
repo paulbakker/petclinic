@@ -25,7 +25,7 @@
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>org.springframework.orm</artifactId>
+      <artifactId>org.springframework.jdbc</artifactId>
       <version>${spring.version}</version>
     </dependency>
     <dependency>
@@ -109,12 +109,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>javax.transaction</groupId>
-      <artifactId>com.springsource.javax.transaction</artifactId>
-      <version>1.1.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.jboss.spec</groupId>
       <artifactId>jboss-javaee-6.0</artifactId>
       <version>1.0.0.Final</version>
@@ -131,11 +125,6 @@
       <artifactId>seam-solder</artifactId>
       <version>3.0.0.Final</version>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.jboss.seam.faces</groupId>-->
-      <!--<artifactId>seam-faces</artifactId>-->
-      <!--<version>3.0.2.Final</version>-->
-    <!--</dependency>-->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
